@@ -11,14 +11,14 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if params[:username] != "" && params[:email] != "" && params[:password] != ""
-        @user = User.new(params)
-        @user.save
-        session[:user_id] = @user.id
-        redirect '/tweets'
-      else
-        redirect '/signup'
-      end
+      @user = User.new(params)
+      @user.save
+      session[:user_id] = @user.id
+      redirect '/tweets'
+    else
+      redirect '/signup'
     end
+  end
 
 
 get '/login' do
@@ -51,9 +51,8 @@ get '/logout' do
   if logged_in?
     session.destroy
   end
-    redirect "/login"
+
+  redirect "/login"
 end
-
-
 
 end
