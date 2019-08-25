@@ -2,7 +2,7 @@
   <%= @error %>
  <form action="/tweets/<%= @tweet.id %>" method="post">
    <input type="hidden" name="_method" value="patch" >
-   <h1>Create Your Tweet:</h1>
+   <h1>Rfit Your Tweet:</h1>
    <input type="text" name="content" value="<% @tweet.content %>"><br>
    <!-- <input type="submit" value="submit" > -->
    <input type="submit" value="Edit Tweet" name="Edit Tweet">
