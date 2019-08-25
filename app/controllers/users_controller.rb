@@ -48,6 +48,7 @@ get "/users/:slug" do
 end
 
 get '/logout' do
+  binding.pry
   if logged_in?
     session.destroy
   end
