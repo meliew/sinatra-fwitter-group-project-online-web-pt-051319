@@ -50,7 +50,6 @@ end
 get '/logout' do
   if logged_in?
     session.destroy
-    @current_user = nil
   end
 
   redirect "/login"
