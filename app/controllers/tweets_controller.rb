@@ -45,7 +45,7 @@ class TweetsController < ApplicationController
       if @tweet && @tweet.user == current_user
         erb :"/tweets/edit"
       else
-        redirect "/login"
+        redirect "/"
       end
     end
   end
