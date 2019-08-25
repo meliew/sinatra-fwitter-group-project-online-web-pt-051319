@@ -9,8 +9,6 @@ class UsersController < ApplicationController
     end
   end
 
-
-
   post '/signup' do
     if params[:username] != "" && params[:email] != "" && params[:password] != ""
         @user = User.new(params)
@@ -33,7 +31,7 @@ end
 
 
 post '/login' do
-  @user = User.find_by(username: params[:username])
+  @user = User.find_by(:username => params[:username])
 
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
