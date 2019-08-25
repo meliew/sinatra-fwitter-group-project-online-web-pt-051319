@@ -47,7 +47,7 @@ get "/users/:slug" do
 
 end
 
-post '/logout' do
+get '/logout' do
   if logged_in?
     session.destroy
   end
