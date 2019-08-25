@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
 
   post '/signup' do
-      if params[:username] != "" && params[:email] != "" && params[:password] != ""
+    if params[:username] != "" && params[:email] != "" && params[:password] != ""
         @user = User.new(params)
         @user.save
         session[:user_id] = @user.id
@@ -43,7 +43,7 @@ post '/login' do
   end
 end
 
-get "/users/#{user.slug}"
+get 'users/:slug' do
   @user = User.find_by_slug(params[:slug])
   erb :'users/show'
 
