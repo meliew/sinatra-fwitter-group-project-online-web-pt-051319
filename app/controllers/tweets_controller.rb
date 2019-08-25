@@ -28,7 +28,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  get '/tweets/:id/show' do
+  get '/tweets/:id' do
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
       erb :"/tweets/show"
@@ -49,7 +49,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  patch "tweets/:id" do
+  patch "/tweets/:id" do
     @tweet = Tweet.find_by_id(params[:id])
     if params[:content] != ""
       @tweet.update(content: params[:content])
