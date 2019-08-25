@@ -27,7 +27,7 @@ get '/login' do
   if !logged_in?
     erb :'users/login'
   else
-    redirect '/tweets'
+    redirect '/tweets/index'
   end
 end
 
