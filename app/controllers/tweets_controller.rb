@@ -22,8 +22,10 @@ end
 
 get 'tweets/new' do
   if !logged_in?
+    binding.pry
     redirect '/login'
   else
+    binding.pry
     erb :'/tweets/new'
   end
 end
