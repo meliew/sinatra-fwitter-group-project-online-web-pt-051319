@@ -10,6 +10,7 @@ class TweetsController < ApplicationController
 end
 
   post '/tweets' do
+    binding.pry
     if params[:content] != ""
       @tweet = Tweet.new(params)
       @tweet.user = current_user
