@@ -20,8 +20,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  get 'tweets/new' do
-    binding.pry
+  get '/tweets/new' do
     if !logged_in?
       redirect '/login'
     else
