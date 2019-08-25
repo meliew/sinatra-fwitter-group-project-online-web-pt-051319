@@ -43,7 +43,7 @@ post '/login' do
   end
 end
 
-get 'users/:slug' do
+get "/users/#{user.slug}"
   @user = User.find_by_slug(params[:slug])
   erb :'users/show'
 
